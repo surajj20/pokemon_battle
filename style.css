@@ -1,0 +1,238 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f7f2;
+    color: #26352a;
+}
+
+.navbar {
+    background: #174d35;
+    color: white;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.status {
+    color: #8ef0a8;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 30px;
+    color: #174d35;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #718076;
+}
+
+.date {
+    color: #54705d;
+    font-size: 14px;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+section h2 {
+    margin-bottom: 18px;
+    color: #174d35;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.weather-card,
+.chart-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #0000000a;
+}
+
+.weather-card span {
+    color: #748177;
+    font-size: 14px;
+}
+
+.weather-card h2 {
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+.message {
+    margin-top: 12px;
+    color: #57735d;
+    font-size: 13px;
+}
+
+.input-section {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px #0000000a;
+}
+
+.input-section p {
+    color: #77837a;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce5dd;
+    border-radius: 7px;
+    outline: none;
+    background: #fafcfa;
+}
+
+input:focus, select:focus {
+    border-color: #2c8b56;
+}
+
+button {
+    background: #21834b;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    margin-top: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #145e34;
+}
+
+.recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.crop-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border-top: 4px solid #30965a;
+    box-shadow: 0 3px 12px #0000000a;
+}
+
+.crop-card h3 {
+    color: #1b663c;
+    margin-bottom: 12px;
+}
+
+.crop-card p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.score {
+    font-size: 25px;
+    font-weight: bold;
+    color: #21834b;
+    margin: 12px 0;
+}
+
+.analytics h2 {
+    margin-bottom: 20px;
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.chart-card h3 {
+    margin-bottom: 20px;
+    color: #365a42;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #718076;
+    font-size: 13px;
+}
+
+@media(max-width: 768px) {
+    .weather-grid,
+    .recommendation-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-grid,
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar, .welcome {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+@media(max-width: 480px) {
+    .weather-grid,
+    .recommendation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 94%;
+    }
+}
