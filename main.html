@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Crop Advisor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">🌱 Smart Crop Advisor</div>
+    <div class="nav-right">
+        <span>Smart Agriculture System</span>
+        <span class="status">● System Online</span>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <div>
+            <h1>Smart Farming Dashboard</h1>
+            <p>Make better farming decisions with soil and weather insights.</p>
+        </div>
+        <div class="date" id="today"></div>
+    </section>
+
+    <!-- WEATHER -->
+    <section class="weather-section">
+        <h2>Live Weather Information</h2>
+
+        <div class="weather-grid">
+            <div class="weather-card">
+                <span>🌡️ Temperature</span>
+                <h2 id="temperature">-- °C</h2>
+            </div>
+
+            <div class="weather-card">
+                <span>💧 Humidity</span>
+                <h2 id="humidity">-- %</h2>
+            </div>
+
+            <div class="weather-card">
+                <span>🌧️ Rainfall</span>
+                <h2 id="rainfall">-- mm</h2>
+            </div>
+
+            <div class="weather-card">
+                <span>☁️ Condition</span>
+                <h2 id="condition">Loading</h2>
+            </div>
+        </div>
+
+        <p id="weatherMessage" class="message">
+            Getting weather information...
+        </p>
+    </section>
+
+    <!-- INPUT FORM -->
+    <section class="input-section">
+        <h2>🌾 Crop Recommendation System</h2>
+        <p>Enter your agricultural land information.</p>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Soil Type</label>
+                <select id="soil">
+                    <option value="Loamy">Loamy</option>
+                    <option value="Sandy">Sandy</option>
+                    <option value="Clay">Clay</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Water Availability</label>
+                <select id="water">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Season</label>
+                <select id="season">
+                    <option value="Monsoon">Monsoon</option>
+                    <option value="Winter">Winter</option>
+                    <option value="Summer">Summer</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Nitrogen (N)</label>
+                <input type="number" id="nitrogen"
+                    placeholder="Enter N value" min="0" max="200">
+            </div>
+
+            <div>
+                <label>Phosphorus (P)</label>
+                <input type="number" id="phosphorus"
+                    placeholder="Enter P value" min="0" max="200">
+            </div>
+
+            <div>
+                <label>Potassium (K)</label>
+                <input type="number" id="potassium"
+                    placeholder="Enter K value" min="0" max="200">
+            </div>
+
+        </div>
+
+        <button onclick="recommendCrops()">
+            Generate Crop Recommendations
+        </button>
+
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results-section">
+        <h2>Recommended Crops</h2>
+        <div id="recommendations" class="recommendation-grid">
+            <p>Enter your land details to get recommendations.</p>
+        </div>
+    </section>
+
+    <!-- ANALYTICS -->
+    <section class="analytics">
+        <h2>Soil Analytics</h2>
+
+        <div class="chart-grid">
+            <div class="chart-card">
+                <h3>Nutrient Levels</h3>
+                <canvas id="nutrientChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Crop Suitability</h3>
+                <canvas id="cropChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Smart Crop Advisor | Smart Agriculture Project</p>
+        <p>Powered by Open-Meteo API and Chart.js</p>
+    </footer>
+
+</main>
+
+<script src="weather.js"></script>
+<script src="charts.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
